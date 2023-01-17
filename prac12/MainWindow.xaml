@@ -1,0 +1,32 @@
+﻿<Window x:Class="prac12.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:prac12"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" Activated="Window_Activated">
+    <Grid x:Name="grid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <DatePicker x:Name="Dater" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Center" SelectedDateChanged="Dater_SelectedDateChanged"/>
+        <Label x:Name="Name_label" Grid.Column="2" Content="Введите название заметки:" HorizontalAlignment="Stretch"  Grid.Row="1" VerticalAlignment="Stretch" />
+        <Label x:Name="Description_label" Grid.Column="2" Content="Введите описание заметки:" HorizontalAlignment="Stretch"  Grid.Row="2" VerticalAlignment="Stretch"/>
+        <Button x:Name="Delete_Button" Grid.Column="2" Content="Удалить" HorizontalAlignment="Stretch"  Grid.Row="4" VerticalAlignment="Center" Click="Delete_Button_Click"/>
+        <Button x:Name="Save_Button" Grid.Column="1" Content="Сохранить" HorizontalAlignment="Stretch"  Grid.Row="4" VerticalAlignment="Center"  Click="Save_Button_Click"/>
+        <Button x:Name="Create_Button" Grid.Column="2" Content="Создать заметку" HorizontalAlignment="Stretch" Grid.Row="3" VerticalAlignment="Center" Click="Create_Button_Click"/>
+        <TextBox x:Name="Name_Text" Grid.Column="2" HorizontalAlignment="Stretch" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Center"/>
+        <TextBox x:Name="Description_Text" Grid.Column="2" HorizontalAlignment="Stretch" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Center"/>
+        <ListBox x:Name="Display_Notes" HorizontalAlignment="Stretch" Grid.RowSpan="4" Grid.Row="1" VerticalAlignment="Stretch" SelectionChanged="Display_Notes_SelectionChanged" />
+    </Grid>
+</Window>
